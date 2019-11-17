@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'iCiel Pony';
+    src: url('../font/iCielPony.eot');
+    src: url('../font/iCielPony.eot?#iefix') format('embedded-opentype'),
+        url('../font/iCielPony.woff') format('woff'),
+        url('../font/iCielPony.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINRoundOT';
+    src: url('../font/DINRoundOT-Bold.eot');
+    src: url('../font/DINRoundOT-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../font/DINRoundOT-Bold.woff') format('woff'),
+        url('../font/DINRoundOT-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINRoundOT';
+    src: url('../font/DINRoundOTMedium.eot');
+    src: url('../font/DINRoundOTMedium.eot?#iefix') format('embedded-opentype'),
+        url('../font/DINRoundOTMedium.woff') format('woff'),
+        url('../font/DINRoundOTMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}

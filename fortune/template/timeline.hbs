@@ -1,0 +1,163 @@
+<div class="container">
+    <header>
+        <div id="cover" class="l-box">
+            <div class="cover-wrap">
+                <img class="cover-photo" src="{{ profile.cover }}">
+            </div>
+        </div>
+        <div id="profile-menu">
+            <div class="menu-wrap pure-g l-box">
+                <div class="pure-u-7-24">
+                    <div class="avatar">
+                        <img src="http://graph.facebook.com/{{ profile.id }}/picture?type=large&redirect=true&width=240&height=240">
+                    </div>
+                </div>
+                <div class="pure-u-17-24">
+                    <div class="pure-menu pure-menu-horizontal">
+                        <ul class="pure-menu-list">
+                            <li class="pure-menu-item">Timelime</li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Photo</a></li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Likes</a></li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Videos</a></li>
+                        </ul>
+                  </div>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="action-wrap">
+                    <a class="pure-button button-small btn-add-friend" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Add friend</a>
+                    <div class="pure-button-group" role="group" aria-label="...">
+                        <button class="pure-button button-small"><i class="fa fa-rss" aria-hidden="true"></i> Follow</button>
+                        <button class="pure-button button-small">Message</button>
+                        <button class="pure-button button-small">...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+<div class="container pure-g">
+    <div class="pure-u-9-24">
+        <div id="sidebar" class=" l-box">
+            <div class="box">
+                <div class="head clear-fix">
+                    <i class="icon icon-intro"></i>
+                    <div class="text">Intro</div>
+                </div>
+                <div class="body">
+                    <div class="clear-fix inline-text-w-icon">
+                        <i class="icon icon-work"></i>
+                        <div class="text">{{ model.intro }}</div>
+                    </div>
+                    <div class="clear-fix inline-text-w-icon">
+                        <i class="icon icon-relationship"></i>
+                        <div class="text">{{ model.status }}</div>
+                    </div>
+                    <div class="clear-fix inline-text-w-icon">
+                        <i class="icon icon-home"></i>
+                        <div class="text">Live in <a href="#">{{ model.home }}</a></div>
+                    </div>
+                    <div class="clear-fix inline-text-w-icon">
+                        <i class="icon icon-location"></i>
+                        <div class="text">From <a href="#">{{ model.from }}</a></div>
+                    </div>
+                    <div class="clear-fix inline-text-w-icon">
+                        <i class="icon icon-follow"></i>
+                        <div class="text">Followed by <a href="#">{{ model.followed }} people</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="head clear-fix">
+                    <i class="icon icon-photo"></i>
+                    <div class="text">Photo</div>
+                </div>
+                <div class="body">
+                    <div class="profile-photo-wrap">
+                        <ul class="profile-photo">
+                            {{#listPhoto photos}}{{/listPhoto}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="head clear-fix">
+                    <i class="icon icon-friend"></i>
+                    <div class="text">Friend</div>
+                </div>
+                <div class="body">
+                    <div class="profile-photo-wrap">
+                        <ul class="profile-photo">
+                            <li><a style="background: url(img/photos/fb1.jpg);-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" href="#"><span class="profile-name">Khoa Trần</span></a></li>
+                            <li style="padding-left: 5px"><a style="background: url(img/photos/fb2.jpg);-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" href="#"><span class="profile-name">Phương Linh Nguyễn</span></a></li>
+                            <li style="padding-left: 5px"><a style="background: url(img/photos/fb3.jpg);-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" href="#"><span class="profile-name">Hồng Kim</span></a></li>
+                            <li><a style="background: url(img/photos/fb4.jpg);-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" href="#"><span class="profile-name">Chú Lý</span></a></li>
+                            <li style="padding-left: 5px"><a style="background: url(img/photos/fb5.jpg);-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" href="#"><span class="profile-name">Phương Linh Nguyễn</span></a></li>
+                            <li style="padding-left: 5px"><a style="background: url(img/photos/fb6.jpg);-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" href="#"><span class="profile-name">Phan Thanh</span></a></li>
+                            <li><a style="background: url(img/photos/fb7.jpg);-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" href="#"><span class="profile-name">Mark Nguyen</span></a></li>
+                            <li style="padding-left: 5px"><a style="background: url(img/photos/fb8.jpg);-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" href="#"><span class="profile-name">Thánh Hiển</span></a></li>
+                            <li style="padding-left: 5px"><a style="background: url(img/photos/fb9.jpg);-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" href="#"><span class="profile-name">Bụng Bự</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-15-24">
+        <div id="post" class="l-box">
+
+            {{#each posts}}
+            <div class="box post-box">
+                <div class="head clear-fix">
+                    <div class="profile-avatar-wrap clear-fix">
+                        <a href="#" class="avatar"><img src="http://graph.facebook.com/{{ ../profile.id }}/picture?type=large&redirect=true&width=240&height=240"></a>
+                        <div class="profile-name-wrap clear-fix">
+                            <div class="title-wrap">
+                                <a href="#" class="profile-name">
+                                    {{ ../profile.name }}
+                                    {{#if checkin}}
+                                        <span>checked in to <i class="icon icon-checked"></i></span> <a href="#" class="checked">{{ checkin }}</a>
+                                    {{/if}}
+                                    {{#if feeling}}
+                                        <span>— 👩 feeling pretty
+                                    {{/if}}
+                                </a>
+                            </div>
+                            <a href="#" class="time-ago">{{ timeAgo }}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-text">
+                    <p>{{status}} 😊</p>
+                </div>
+                <div class="post-photo">
+                    <img src="{{ photo }}">
+                    {{#if maskName }}
+                        <div class="{{ maskClass }}">{{ ../../profile.name }}</div>
+                    {{/if}}
+
+                    {{#if maskAvatar }}
+                        <div class="{{ maskClass }}" style="background: url(http://graph.facebook.com/{{ ../../profile.id }}/picture?type=large&redirect=true&width=240&height=240) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover"></div>
+                    {{/if}}
+                </div>
+                <div class="post-footer">
+                    <div class="post-button-wrap">
+                        <a href="#" class="btn btn-like">Like</a>
+                        <a href="#" class="btn btn-comment">Comment</a>
+                        <a href="#" class="btn btn-share">Share</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+            <div class="box post-box special-post">
+                <img src="img/footer.png">
+                <a href="#" class="btn-share"></a>
+            </div>
+        </div>
+    </div>
+</div>

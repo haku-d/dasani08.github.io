@@ -1,0 +1,84 @@
+.container {
+    background: url(../img/bg-mobile-app.jpg) no-repeat top center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    width: 100%;
+    top: 110px;
+}
+
+.box img {
+    width: 90%;
+}
+
+.fortune {
+    text-align: left;
+    padding: 0 13px;
+    padding-right: 3px;
+    margin-top: 5px;
+}
+
+.msg {
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.loading {
+    font-size: 27px;
+    line-height: 27px;
+    margin-top: 0px;
+    padding-top: 0;
+    padding-left: 0;
+    font-weight: normal;
+}
+
+.mg-left-15 {
+    margin-left: 15px;
+}
+
+.btn-start {
+    width: 95%;
+}
+
+.btn-start img {
+    width: 100%;
+}
+
+
+@media all and (orientation:landscape) {
+    .container {
+        background: url(../img/bg-mobile-app.jpg) no-repeat top center; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        position: relative;
+        width: 100%;
+        height: 1000px;
+    }
+
+    .box {
+        top: 190px;
+    }
+
+    .fortune {
+        padding: 0 25px;
+    }
+
+    .msg {
+        font-size: 15px;
+        line-height: 17px;
+    }
+
+    .loading {
+        font-size: 37px;
+        line-height: 37px;
+    }
+}
