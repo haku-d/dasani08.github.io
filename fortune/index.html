@@ -1,379 +1,404 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fortune - Landing Page</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@0.6.2/build/pure-min.css"
+      integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.5/mobile-detect.min.js"></script>
     <script type="text/javascript">
-        // Redirect to mobile site
-        var md = new MobileDetect(window.navigator.userAgent);
-        var isMobile = md.mobile() !== null;
-        if(isMobile) {
-            window.location.href = 'mb-index.html';
-        }
+      // Redirect to mobile site
+      var md = new MobileDetect(window.navigator.userAgent);
+      var isMobile = md.mobile() !== null;
+      if (isMobile) {
+        window.location.href = "mb-index.html";
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container" id="leaf"></div>
     <div class="container bg-none">
-        <div class="box profile-start">
-            <div class="pure-u-1-2 txt-center">
-                <img class="img-title" src="img/1_02.png">
-                <div class="fortune">
-                    <p class="msg margin-bt-0 txt-left">
-                    <i>Một tương lai lạ kỳ hơn bạn<br/> nghĩ đang sắp mở ra trước mắt.<br/> Nếu tò mò thì đừng bỏ qua.<br/></i>
-                    </p>
-                    <p class="msg margin-top-10 margin-bt-10 txt-left"><i>Hãy mau khám phá!</i></p>
-                    <a class="btn-start" href="#"><img src="img/btn-start_03.png"></a>
-                </div>
-            </div>
-            <div class="pure-u-2-2">
-                
-            </div>
+      <div class="box profile-start">
+        <div class="pure-u-1-2 txt-center">
+          <img class="img-title" src="img/1_02.png" />
+          <div class="fortune">
+            <p class="msg margin-bt-0 txt-left">
+              <i
+                >Một tương lai lạ kỳ hơn bạn<br />
+                nghĩ đang sắp mở ra trước mắt.<br />
+                Nếu tò mò thì đừng bỏ qua.<br
+              /></i>
+            </p>
+            <p class="msg margin-top-10 margin-bt-10 txt-left">
+              <i>Hãy mau khám phá!</i>
+            </p>
+            <a class="btn-start" href="#"><img src="img/btn-start_03.png"/></a>
+          </div>
         </div>
-        <div class="box profile-loading" style="display: none;">
-            <div class="pure-u-1-2">
-                <p class="msg loading margin-bt-0">
-                    Tương lai<br/>đang dần hé mở<span class="dot-loading"></span>
-                </p>
-            </div>
-            <div class="pure-u-2-2">
-                
-            </div>
+        <div class="pure-u-2-2"></div>
+      </div>
+      <div class="box profile-loading" style="display: none;">
+        <div class="pure-u-1-2">
+          <p class="msg loading margin-bt-0">
+            Tương lai<br />đang dần hé mở<span class="dot-loading"></span>
+          </p>
         </div>
+        <div class="pure-u-2-2"></div>
+      </div>
     </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery-handlebars/handlebars-1.0.0.js"></script>
-    <script type="text/javascript" src="js/jquery-handlebars/plugin.js"></script>
+    <script
+      type="text/javascript"
+      src="js/jquery-handlebars/handlebars-1.0.0.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/jquery-handlebars/plugin.js"
+    ></script>
     <script type="text/javascript" src="js/fb.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r54/three.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdnjs.cloudflare.com/ajax/libs/three.js/r54/three.min.js"
+    ></script>
     <script type="text/javascript">
-        var TO_RADIANS = Math.PI / 180;
+      var TO_RADIANS = Math.PI / 180;
 
-        Particle3D = function(material) {
-            THREE.Particle.call(this, material);
+      Particle3D = function(material) {
+        THREE.Particle.call(this, material);
 
-            //this.material = material instanceof Array ? material : [ material ];
-            // define properties
-            this.velocity = new THREE.Vector3(0, -8, 0);
-            this.velocity.rotateX(randomRange(-45, 45));
-            this.velocity.rotateY(randomRange(0, 360));
-            this.gravity = new THREE.Vector3(0, 0, 0);
-            this.drag = 1;
-            // methods... 
-        };
+        //this.material = material instanceof Array ? material : [ material ];
+        // define properties
+        this.velocity = new THREE.Vector3(0, -8, 0);
+        this.velocity.rotateX(randomRange(-45, 45));
+        this.velocity.rotateY(randomRange(0, 360));
+        this.gravity = new THREE.Vector3(0, 0, 0);
+        this.drag = 1;
+        // methods...
+      };
 
-        Particle3D.prototype = new THREE.Particle();
-        Particle3D.prototype.constructor = Particle3D;
+      Particle3D.prototype = new THREE.Particle();
+      Particle3D.prototype.constructor = Particle3D;
 
-        Particle3D.prototype.updatePhysics = function() {
-            this.velocity.multiplyScalar(this.drag);
-            this.velocity.addSelf(this.gravity);
-            this.position.addSelf(this.velocity);
-        }
+      Particle3D.prototype.updatePhysics = function() {
+        this.velocity.multiplyScalar(this.drag);
+        this.velocity.addSelf(this.gravity);
+        this.position.addSelf(this.velocity);
+      };
 
-        THREE.Vector3.prototype.rotateY = function(angle) {
-            cosRY = Math.cos(angle * TO_RADIANS);
-            sinRY = Math.sin(angle * TO_RADIANS);
+      THREE.Vector3.prototype.rotateY = function(angle) {
+        cosRY = Math.cos(angle * TO_RADIANS);
+        sinRY = Math.sin(angle * TO_RADIANS);
 
-            var tempz = this.z;;
-            var tempx = this.x;
+        var tempz = this.z;
+        var tempx = this.x;
 
-            this.x = (tempx * cosRY) + (tempz * sinRY);
-            this.z = (tempx * -sinRY) + (tempz * cosRY);
-        }
+        this.x = tempx * cosRY + tempz * sinRY;
+        this.z = tempx * -sinRY + tempz * cosRY;
+      };
 
-        THREE.Vector3.prototype.rotateX = function(angle) {
-            cosRY = Math.cos(angle * TO_RADIANS);
-            sinRY = Math.sin(angle * TO_RADIANS);
+      THREE.Vector3.prototype.rotateX = function(angle) {
+        cosRY = Math.cos(angle * TO_RADIANS);
+        sinRY = Math.sin(angle * TO_RADIANS);
 
-            var tempz = this.z;;
-            var tempy = this.y;
+        var tempz = this.z;
+        var tempy = this.y;
 
-            this.y = (tempy * cosRY) + (tempz * sinRY);
-            this.z = (tempy * -sinRY) + (tempz * cosRY);
-        }
+        this.y = tempy * cosRY + tempz * sinRY;
+        this.z = tempy * -sinRY + tempz * cosRY;
+      };
 
-        THREE.Vector3.prototype.rotateZ = function(angle) {
-            cosRY = Math.cos(angle * TO_RADIANS);
-            sinRY = Math.sin(angle * TO_RADIANS);
+      THREE.Vector3.prototype.rotateZ = function(angle) {
+        cosRY = Math.cos(angle * TO_RADIANS);
+        sinRY = Math.sin(angle * TO_RADIANS);
 
-            var tempx = this.x;;
-            var tempy = this.y;
+        var tempx = this.x;
+        var tempy = this.y;
 
-            this.y = (tempy * cosRY) + (tempx * sinRY);
-            this.x = (tempy * -sinRY) + (tempx * cosRY);
-        }
+        this.y = tempy * cosRY + tempx * sinRY;
+        this.x = tempy * -sinRY + tempx * cosRY;
+      };
 
-        // returns a random number between the two limits provided 
+      // returns a random number between the two limits provided
 
-        function randomRange(min, max) {
-            return ((Math.random() * (max - min)) + min);
-        }
+      function randomRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
     </script>
     <script type="text/javascript">
+      var SCREEN_WIDTH = window.innerWidth;
+      var SCREEN_HEIGHT = window.innerHeight;
 
-        var SCREEN_WIDTH = window.innerWidth;
-        var SCREEN_HEIGHT = window.innerHeight;
+      var container;
 
-        var container;
+      var particle;
 
-        var particle;
+      var camera;
+      var scene;
+      var renderer;
 
-        var camera;
-        var scene;
-        var renderer;
+      var mouseX = 0;
+      var mouseY = 0;
 
-        var mouseX = 0;
-        var mouseY = 0;
+      var windowHalfX = window.innerWidth / 2;
+      var windowHalfY = window.innerHeight / 2;
 
-        var windowHalfX = window.innerWidth / 2;
-        var windowHalfY = window.innerHeight / 2;
+      var particles = [];
+      // var particleImage = new Image(); //THREE.ImageUtils.loadTexture( "http://i.imgur.com/cTALZ.png" );
+      // particleImage.src = 'img/images/leaf_03.png';
+      var particleImages = [
+        "img/images/leaf_03.png",
+        "img/images/leaf_24.png",
+        "img/images/leaf_19.png",
+        "img/images/leaf_10.png"
+      ];
 
-        var particles = []; 
-        // var particleImage = new Image(); //THREE.ImageUtils.loadTexture( "http://i.imgur.com/cTALZ.png" );
-        // particleImage.src = 'img/images/leaf_03.png'; 
-        var particleImages = [
-            'img/images/leaf_03.png',
-            'img/images/leaf_24.png',
-            'img/images/leaf_19.png',
-            'img/images/leaf_10.png'
-        ];
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
 
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
+      function init() {
+        _container = document.getElementById("leaf");
+
+        camera = new THREE.PerspectiveCamera(
+          75,
+          SCREEN_WIDTH / SCREEN_HEIGHT,
+          1,
+          10000
+        );
+        camera.position.z = 1000;
+
+        scene = new THREE.Scene();
+        scene.add(camera);
+
+        renderer = new THREE.CanvasRenderer();
+        renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+
+        for (var i = 0; i < 10; i++) {
+          var particleImage = new Image();
+          particleImage.src = particleImages[getRandomInt(0, 3)];
+          var material = new THREE.ParticleBasicMaterial({
+            map: new THREE.Texture(particleImage)
+          });
+          particle = new Particle3D(material);
+          particle.position.x = Math.random() * 2000 - 1000;
+          particle.position.y = Math.random() * 2000 - 1000;
+          particle.position.z = Math.random() * 2000 - 1000;
+          particle.scale.x = particle.scale.y = 1;
+          scene.add(particle);
+          particles.push(particle);
         }
 
-        function init() {
-            _container = document.getElementById('leaf');
+        _container.appendChild(renderer.domElement);
 
-            camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
-            camera.position.z = 1000;
+        setInterval(loop, 1000 / 60);
+      }
 
-            scene = new THREE.Scene();
-            scene.add(camera);
-                
-            renderer = new THREE.CanvasRenderer();
-            renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+      function onDocumentMouseMove(event) {
+        mouseX = event.clientX - windowHalfX;
+        mouseY = event.clientY - windowHalfY;
+      }
 
-            for(var i = 0; i < 10; i++) {
-                var particleImage = new Image();
-                particleImage.src = particleImages[getRandomInt(0,3)];
-                var material = new THREE.ParticleBasicMaterial( { map: new THREE.Texture(particleImage) } );
-                particle = new Particle3D( material);
-                particle.position.x = Math.random() * 2000 - 1000;
-                particle.position.y = Math.random() * 2000 - 1000;
-                particle.position.z = Math.random() * 2000 - 1000;
-                particle.scale.x = particle.scale.y =  1;
-                scene.add(particle);
-                particles.push(particle); 
-            }
+      function onDocumentTouchStart(event) {
+        if (event.touches.length == 1) {
+          event.preventDefault();
 
-            _container.appendChild( renderer.domElement );
-            
-            setInterval(loop, 1000 / 60);
-            
+          mouseX = event.touches[0].pageX - windowHalfX;
+          mouseY = event.touches[0].pageY - windowHalfY;
+        }
+      }
+
+      function onDocumentTouchMove(event) {
+        if (event.touches.length == 1) {
+          event.preventDefault();
+
+          mouseX = event.touches[0].pageX - windowHalfX;
+          mouseY = event.touches[0].pageY - windowHalfY;
+        }
+      }
+
+      //
+
+      function loop() {
+        for (var i = 0; i < particles.length; i++) {
+          var particle = particles[i];
+          particle.updatePhysics();
+
+          with (particle.position) {
+            if (y < -1000) y += 2000;
+            if (x > 1000) x -= 2000;
+            else if (x < -1000) x += 2000;
+            if (z > 1000) z -= 2000;
+            else if (z < -1000) z += 2000;
+          }
         }
 
-        function onDocumentMouseMove(event) {
+        camera.position.x += (mouseX - camera.position.x) * 0.05;
+        camera.position.y += (-mouseY - camera.position.y) * 0.05;
+        camera.lookAt(scene.position);
 
-            mouseX = event.clientX - windowHalfX;
-            mouseY = event.clientY - windowHalfY;
-        }
-
-        function onDocumentTouchStart( event ) {
-
-            if ( event.touches.length == 1 ) {
-
-                event.preventDefault();
-
-                mouseX = event.touches[ 0 ].pageX - windowHalfX;
-                mouseY = event.touches[ 0 ].pageY - windowHalfY;
-            }
-        }
-
-        function onDocumentTouchMove( event ) {
-
-            if ( event.touches.length == 1 ) {
-
-                event.preventDefault();
-
-                mouseX = event.touches[ 0 ].pageX - windowHalfX;
-                mouseY = event.touches[ 0 ].pageY - windowHalfY;
-            }
-        }
-
-        //
-
-        function loop() {
-
-        for(var i = 0; i<particles.length; i++) {
-
-                var particle = particles[i]; 
-                particle.updatePhysics(); 
-
-                with(particle.position) {
-                    if(y<-1000) y+=2000; 
-                    if(x>1000) x-=2000; 
-                    else if(x<-1000) x+=2000; 
-                    if(z>1000) z-=2000; 
-                    else if(z<-1000) z+=2000; 
-                }                
-            }
-
-            camera.position.x += ( mouseX - camera.position.x ) * 0.05;
-            camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
-            camera.lookAt(scene.position); 
-
-            renderer.render( scene, camera );
-
-        }
+        renderer.render(scene, camera);
+      }
     </script>
     <script type="text/javascript">
-        var bgHeight = 893,
-            bgWidth = 1916,
-            _pTop = 200,
-            _pLeft = 620;
+      var bgHeight = 893,
+        bgWidth = 1916,
+        _pTop = 200,
+        _pLeft = 620;
 
-        var imgRatio = bgHeight / bgWidth;
+      var imgRatio = bgHeight / bgWidth;
 
-        // Loading ...
-        $.fn.loading = function() {
-            var numberOfDot = 3;
-            // Get loading dot
-            var loadingEl = $(this).find('.dot-loading');
-            var loadingCount = 0;
+      // Loading ...
+      $.fn.loading = function() {
+        var numberOfDot = 3;
+        // Get loading dot
+        var loadingEl = $(this).find(".dot-loading");
+        var loadingCount = 0;
 
-            setInterval(function(){
-                // Reset loading
-                if(loadingCount == numberOfDot) {
-                    loadingEl.empty();
-                    loadingCount = 0;
-                }
+        setInterval(function() {
+          // Reset loading
+          if (loadingCount == numberOfDot) {
+            loadingEl.empty();
+            loadingCount = 0;
+          }
 
-                loadingEl.append('.');
-                loadingCount++;
-            }, 1000);
+          loadingEl.append(".");
+          loadingCount++;
+        }, 1000);
+      };
+
+      $(document).ready(function() {
+        var $window = $(window);
+        var $el = $(".box");
+
+        function doResize() {
+          var bgRatio = calcRatio();
+          var ratio = 1;
+
+          if (bgRatio.finalHeight > bgRatio.finalWidth) {
+            ratio = bgRatio.finalWidth / bgWidth;
+          } else {
+            ratio = bgRatio.finalHeight / bgHeight;
+          }
+
+          var _top = _pTop * ratio;
+          var _left = _pLeft * ratio;
+
+          if ($window.width() < bgRatio.finalWidth) {
+            _left -= (bgRatio.finalWidth - $window.width()) / 2;
+          }
+
+          if ($window.height() < bgRatio.finalHeight) {
+            _top -= (bgRatio.finalHeight - $window.height()) / 2;
+          }
+
+          $el.css({
+            transform: "scale(" + ratio + ")",
+            "-webkit-transform": "scale(" + ratio + ")",
+            "-moz-transform": "scale(" + ratio + ")",
+            top: _top,
+            left: _left
+          });
+
+          $("canvas").css({
+            width: $window.width(),
+            height: $window.height()
+          });
         }
 
-        $(document).ready(function(){
-            var $window        = $(window);
-            var $el            = $('.box');
+        function calcRatio() {
+          var windowHeight = $window.height(),
+            windowWidth = $window.width();
 
-            function doResize() {
-                var bgRatio = calcRatio();
-                var ratio = 1;
+          var containerRatio = windowHeight / windowWidth,
+            finalHeight,
+            finalWidth;
 
-                if(bgRatio.finalHeight > bgRatio.finalWidth) {
-                    ratio = bgRatio.finalWidth / bgWidth;
-                } else {
-                    ratio = bgRatio.finalHeight / bgHeight;
-                }
+          if (containerRatio > imgRatio) {
+            finalHeight = windowHeight;
+            finalWidth = windowHeight / imgRatio;
+          } else {
+            finalWidth = windowWidth;
+            finalHeight = windowWidth * imgRatio;
+          }
 
-                var _top   = _pTop * ratio;
-                var _left  = _pLeft * ratio;
+          return {
+            finalWidth: finalWidth,
+            finalHeight: finalHeight
+          };
+        }
 
-                if($window.width() < bgRatio.finalWidth) {
-                    _left -= (bgRatio.finalWidth - $window.width()) / 2;
-                }
+        $window.resize(doResize).trigger("resize");
+        init();
 
-                if($window.height() < bgRatio.finalHeight) {
-                    _top -= ((bgRatio.finalHeight - $window.height())/2);
-                }
-
-                $el.css({
-                    'transform': 'scale('+ ratio +')',
-                    '-webkit-transform': 'scale('+ ratio +')',
-                    '-moz-transform': 'scale('+ ratio +')',
-                    'top': _top,
-                    'left': _left
-                });
-
-                $('canvas').css({
-                    width: $window.width(),
-                    height: $window.height()
-                });
-            }
-
-            function calcRatio() {
-                var windowHeight = $window.height(),
-                    windowWidth  = $window.width();
-
-                var containerRatio = windowHeight / windowWidth,
-                    finalHeight, finalWidth;
-
-                if(containerRatio > imgRatio) {
-                    finalHeight = windowHeight;
-                    finalWidth  = (windowHeight / imgRatio);
-                } else {
-                    finalWidth  = windowWidth;
-                    finalHeight = (windowWidth * imgRatio);
-                }
-
-                return {
-                    finalWidth: finalWidth,
-                    finalHeight: finalHeight
-                }
-            }
-
-            $window.resize(doResize).trigger('resize');
-            init();
-
-            $.handlebars({
-                templatePath: 'template',
-                templateExtension: 'hbs'
-            });
-
-            Handlebars.registerHelper('listPhoto', function(items, options) {
-                var out = "";
-
-                for(var i=0, l=items.length; i<l; i++) {
-
-                    var style = [
-                        'background: url(' + items[i].source + ') no-repeat center center;',
-                        '-webkit-background-size: cover;',
-                        '-moz-background-size: cover;',
-                        '-o-background-size: cover;',
-                        'background-size: cover;',
-                    ];
-
-                    var paddingStyle = "";
-
-                    if(i % 3 != 0) {
-                        paddingStyle = 'padding-left: 5px;';
-                    }
-
-                    out += "<li style='" +paddingStyle+ "'><a href='#' style='" + style.join('') + "'></a></li>";
-                }
-
-                return out;
-            });
-
-            $.ajaxSetup({ cache: true });
-              $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
-                FB.init({
-                  appId: '1638656329762847',
-                  version: 'v2.7'
-                });
-
-                $('.btn-start').bind('click', function(){
-                    var app = new App(FB);
-                        app.doLogin(function(response){
-                            if(response.authResponse) {
-                                $('.profile-start').hide();
-                                $('.profile-loading').show();
-                                $('.msg').loading();
-                                app.renderTimeline();
-                            }
-                        });
-                });
-              });
+        $.handlebars({
+          templatePath: "template",
+          templateExtension: "hbs"
         });
+
+        Handlebars.registerHelper("listPhoto", function(items, options) {
+          var out = "";
+
+          for (var i = 0, l = items.length; i < l; i++) {
+            var style = [
+              "background: url(" +
+                items[i].source +
+                ") no-repeat center center;",
+              "-webkit-background-size: cover;",
+              "-moz-background-size: cover;",
+              "-o-background-size: cover;",
+              "background-size: cover;"
+            ];
+
+            var paddingStyle = "";
+
+            if (i % 3 != 0) {
+              paddingStyle = "padding-left: 5px;";
+            }
+
+            out +=
+              "<li style='" +
+              paddingStyle +
+              "'><a href='#' style='" +
+              style.join("") +
+              "'></a></li>";
+          }
+
+          return out;
+        });
+
+        $.ajaxSetup({ cache: true });
+        $.getScript("//connect.facebook.net/en_US/sdk.js", function() {
+          FB.init({
+            appId: "1638656329762847",
+            version: "v2.7"
+          });
+
+          $(".btn-start").bind("click", function() {
+            var app = new App(FB);
+            app.doLogin(function(response) {
+              if (response.authResponse) {
+                $(".profile-start").hide();
+                $(".profile-loading").show();
+                $(".msg").loading();
+                app.renderTimeline();
+              }
+            });
+          });
+        });
+      });
     </script>
-</body>
+  </body>
 </html>

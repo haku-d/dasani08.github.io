@@ -22,4 +22,4 @@
 
 ![Image](/merries/1.png)
 
-[Demo](/merries/index.html)
+[Demo](/merries/page1.html)
