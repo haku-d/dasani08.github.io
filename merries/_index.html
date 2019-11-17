@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Merries - Nhat Ky Be Yeu</title>
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.5/mobile-detect.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-90795583-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box">
+            <img class="title" src="img/title.png">
+            <div class="text">
+                <p>Nhật ký ghi lại những cột mốc vận động<br/>
+                của bé yêu, tặng kèm bí kíp "toàn tập"<br/>
+                giúp con phát triển tài năng mai sau<br/>
+                ngay từ khi còn nhỏ!</p>
+            </div>
+
+            <div class="btn-home" onclick="window.location.href='page1.html'">
+                <img src="img/btn-home.png">
+            </div>
+        </div>
+        
+        <div id="footer">
+            <img src="img/footer.png">
+        </div>
+    </div>
+    
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        // Redirect to mobile site
+        var md = new MobileDetect(window.navigator.userAgent);
+        if(md.mobile() !== null) {
+            window.location.href = 'mobile/index.html';
+        }
+    </script>
+    <script type="text/javascript">
+        $.fn.doResize = function(options) {
+            var bgSize = {
+                width: options.width,
+                height: options.height
+            };
+
+            var bgScaleRatio = bgSize.height/bgSize.width;
+
+            var $window = $(window);
+            var $el = $(this);
+
+            function resize() {
+                // get bg size
+                var _bgSize = getBgSize();
+                var scale = 1;
+
+                if(_bgSize.height > _bgSize.width) {
+                    scale = _bgSize.width / bgSize.width;
+                } else {
+                    scale = _bgSize.height / bgSize.height;
+                }
+
+                var _top   = options.top * scale;
+                var _left  = options.left * scale;
+
+                if($window.width() < _bgSize.width) {
+                    _left -= (_bgSize.width - $window.width()) / 2;
+                }
+
+                if($window.height() < _bgSize.height) {
+                    _top -= (_bgSize.height - $window.height()) / 2;
+                }
+
+                $el.css({
+                    'transform': 'scale('+ scale +')',
+                    '-webkit-transform': 'scale('+ scale +')',
+                    '-moz-transform': 'scale('+ scale +')',
+                    'top': _top,
+                    'left': _left
+                });
+            }
+
+            function getBgSize() {
+                var winHeight = $window.height(),
+                    winWidth = $window.width();
+
+                var winScaleRatio = winHeight/winWidth;
+
+                var height, width;
+
+                if(winScaleRatio > bgScaleRatio) {
+                    height = winHeight;
+                    width  = (winHeight / bgScaleRatio);
+                } else {
+                    width  = winWidth;
+                    height = (winWidth * bgScaleRatio);
+                }
+
+                return {
+                    width: width,
+                    height: height
+                }
+            }
+
+            $window.resize(resize).trigger('resize');
+        };
+
+        $(document).ready(function(){
+            $('.box').doResize({
+                top: 100,
+                width: 1915,
+                height: 768
+            });
+        });
+    </script>
+</body>
+</html>
