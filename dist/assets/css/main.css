@@ -1,0 +1,60 @@
+header {
+  font-size: 22px;
+  background-color: #1a1a1a; }
+
+body {
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px; }
+
+a {
+  text-decoration: none;
+  color: #a0afb7; }
+  a:hover {
+    color: #a0afb7; }
+
+#main {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 100px 10px 10px 10px; }
+  #main ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+
+.blue-highlight {
+  color: #42a5f5; }
+
+.highlight.blue, .highlight.framework {
+  color: #42a5f5; }
+
+.highlight.lang {
+  color: #d81b60; }
+
+.highlight.other {
+  color: #c3d82c; }
+
+.cursor {
+  display: inline-block;
+  width: 9px;
+  height: 24px;
+  border: 1px solid #a0afb7; }
+
+header {
+  padding: 15px; }
+
+.list-heading {
+  font-size: 22px; }
+
+.underline {
+  text-decoration: underline; }
+
+ul.terminal {
+  list-style-image: url("/assets/img/triangle.png"); }
+  ul.terminal ul {
+    list-style: none; }
+
+#about-me {
+  margin-top: 100px; }

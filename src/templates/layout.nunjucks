@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Danny's Resume</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ asset_path }}/css/bootstrap.css" />
+    <link rel="stylesheet" href="{{ asset_path }}/css/main.css" />
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="{{ asset_path }}/js/main.js"></script>
+  </body>
+</html>

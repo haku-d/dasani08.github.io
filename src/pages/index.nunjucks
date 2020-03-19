@@ -1,0 +1,24 @@
+{% extends "layout.nunjucks" %} {% block content %}
+<div id="main" class="">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0"
+      >
+        <p>
+          $thanh@dasani.github.io: echo <span class="highlight blue">`hi`</span>
+        </p>
+        <ul class="align-self-start">
+          <li>
+            <a href="/works.html"
+              >1. view <span class="blue-highlight">"my works"</span></a
+            >
+          </li>
+          <li><a href="/about.html">2. about me</a></li>
+          <li><a href="/contact">3. contact me</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
