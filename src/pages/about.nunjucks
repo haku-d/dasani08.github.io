@@ -7,10 +7,7 @@
         class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0"
       >
         <ul class="terminal">
-          <li>
-            My name is <span class="blue-highlight">Thanh</span> (You can call
-            me Danny if it’s easier for you :))
-          </li>
+          <li>My name is <span class="blue-highlight">Thanh</span> (Danny)</li>
           <li>I am a web developer with a background in IT</li>
           <li>
             I had more than 5 years working in an outsourcing company, worked on
